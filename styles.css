@@ -1,0 +1,174 @@
+/*******************************/
+/*   COLOUR & SIZE VARIABLES   */
+/*******************************/
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --dark-blue: hsl(229, 23%, 23%);
+  --dark-grey-blue: hsl(227, 10%, 46%);
+  --dark-grey: hsl(0, 0%, 59%);
+
+  --10px: 0.625rem;
+  --11px: 0.6875rem;
+  --12px: 0.75rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --30px: 1.875rem;
+  --50px: 3.125rem;
+  --200px: 12.5rem;
+
+  --fontWeight: 400;
+  --fontWeight--heavy: 700;
+}
+
+/*******************************/
+/*            RESET            */
+/*******************************/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: 0;
+}
+
+/* TODO: is this necessary? */
+:focus {
+  outline: none;
+}
+
+/*******************************/
+/*     REUSABLE COMPONENTS     */
+/*******************************/
+
+.container {
+  min-height: calc(100vh - 20px);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex--row {
+  flex-direction: row;
+  gap: var(--50px);
+}
+
+/*******************************/
+/*           GENERAL           */
+/*******************************/
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: var(--fontWeight);
+  background: url("./images/bg-pattern-top.svg"),
+    url("./images/bg-pattern-bottom.svg");
+  background-color: var(--dark-cyan);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 40vh, top 50vh left 45vw;
+  color: var(--dark-blue);
+}
+
+hr {
+  border-color: var(--dark-grey);
+  width: 100%;
+  opacity: 15%;
+  margin-bottom: var(--20px);
+}
+
+/*******************************/
+/*       CARD COMPONENTS       */
+/*******************************/
+
+.card {
+  width: 350px;
+  height: 400px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--20px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: url("./images/bg-pattern-card.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile--img {
+  border-radius: 50%;
+  border: 5px solid #fff;
+  position: absolute;
+  top: 25%;
+}
+
+.profile--info {
+  margin-top: var(--200px);
+  margin-bottom: var(--10px);
+}
+
+.profile--name,
+.social--count {
+  font-size: var(--18px);
+  font-weight: var(--fontWeight--heavy);
+}
+
+.profile--location,
+.social--type {
+  color: var(--dark-grey-blue);
+}
+
+.profile--age {
+  color: var(--dark-grey);
+}
+
+.profile--location {
+  margin-bottom: var(--20px);
+}
+
+.social {
+  text-align: center;
+}
+
+.profile--location,
+.social--type {
+  font-size: var(--12px);
+  line-height: 2;
+}
+
+/*******************************/
+/*           FOOTER            */
+/*******************************/
+
+.attribution {
+  font-size: var(--11px);
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.attribution a:focus {
+  outline: 1px solid hsl(228, 45%, 44%);
+}
